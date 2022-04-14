@@ -17,4 +17,18 @@
  7) `Matrix calc_complements()` - вычесление матрицы алгебраических дополнений от текущей
  8) `double determinant()` - вычисление определителя
  9) `Matrix inverse_matrix()` - вычисление обратной матрицы для текущей
-  
+
+## Дополнительно для упрощенного использования методов - реализована перегрузка операторов
+
+ 1) `Matrix operator+(const Matrix& other)` - сумма двух матриц (A * B)
+ 2) `Matrix operator-(const Matrix& other)` - разность двух матриц (A - B) 
+ 3) `Matrix operator*(const Matrix& other)` - произведение двух матриц (A * B)
+ 4) `Matrix operator*(const double num)` - произведение матрицы и числа (A * x)
+ 5) `friend Matrix operator*(const double num, const Matrix&)` - произведение числа и матрицы (x * A)
+ 6) `bool operator==(const Matrix& other)` - равенство двух матриц (A == B)
+ 7) `void operator=(const Matrix& other)` - присвоение значений одной матрицы в другую (A = B)
+ 8) `void operator+=(const Matrix& other)` - сложение одной матрицы к другой (A += B)
+ 9) `void operator-=(const Matrix& other)` - вычитание одной матрицы из другой (A -= B)
+ 10) `void operator*=(const Matrix& other)` - домножение матрицы на другую матрицу (A*= B)
+ 11) `void operator*=(const double num)` - доманожение матрицы на число (A*= x)
+ 12) `double& operator()(const int i, const int j)` - получение ссылки на элемент матрицы по индексу A(i, j)
