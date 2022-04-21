@@ -2,9 +2,9 @@
 
 ## This project presents the implementation of matrices in the form of a class, and operations on matrices in the form of objects of this class
 
-## The concept of a matrix is implemented using the `Matrix` class
+The concept of a matrix is implemented using the `Matrix` class
 
-## This class contains fields `_matrix` - data, `_rows` - rows, `_cols` - columns
+This class contains fields `_matrix` - data, `_rows` - rows, `_cols` - columns
 
 ## All operations are implemented as public methods
 
