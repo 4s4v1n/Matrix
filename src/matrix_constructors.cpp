@@ -1,4 +1,4 @@
-#include "matrix_oop.h"
+#include "matrix.h"
 
 // Конструктор с параметрами
 Matrix::Matrix(int rows, int cols) {

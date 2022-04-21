@@ -1,4 +1,6 @@
-# Matrix C++
+# Matrix 
+
+![matix](./images/matrix.png)
 
 ## This project presents the implementation of matrices in the form of a class, and operations on matrices in the form of objects of this class
 
@@ -32,3 +34,6 @@ This class contains fields `_matrix` - data, `_rows` - rows, `_cols` - columns
  10) `void operator*=(const Matrix& other)` - multiplying a matrix by another matrix (A*= B)
  11) `void operator*=(const double num)` - multiplication of a matrix by a number (A*= x)
  12) `double& operator()(const int i, const int j)` - getting a reference to a matrix element by index A(i, j)
+
+
+The library is built using makefile with g++ version 9.4.0, on Linux. Unit tests are written in gtest.All source materials and makefile are in the src folder.

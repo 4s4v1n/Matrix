@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "matrix_oop.h"
+#include "matrix.h"
 
 TEST(Test, based_constructor) {
   Matrix M;

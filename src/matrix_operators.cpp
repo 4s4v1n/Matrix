@@ -1,4 +1,4 @@
-#include "matrix_oop.h"
+#include "matrix.h"
 
 Matrix Matrix::operator+(const Matrix& other) {
   Matrix A(*this);

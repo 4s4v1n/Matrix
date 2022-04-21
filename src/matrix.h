@@ -1,5 +1,5 @@
-#ifndef MATRIX_OOP_H_
-#define MATRIX_OOP_H_
+#ifndef MATRIX_H
+#define MATRIX_H
 
 #include <cmath>
 #include <iostream>

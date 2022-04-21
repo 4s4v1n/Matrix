@@ -1,4 +1,4 @@
-#include "matrix_oop.h"
+#include "matrix.h"
 
 // Матрица с вычеркнутыми i, j строкой и столбцом
 void Matrix::new_matrix_wo_row_col(const Matrix& other, int r, int c) {

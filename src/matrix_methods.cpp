@@ -1,4 +1,4 @@
-#include "matrix_oop.h"
+#include "matrix.h"
 
 // Проверка равенства текущей и пришедшей матриц
 bool Matrix::eq_matrix(const Matrix& other) {
