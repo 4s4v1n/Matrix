@@ -4,10 +4,7 @@ STD=-std=c++17
 TFLAGS=-lgtest -lpthread
 TFILE=test.cpp
 HEADERS=matrix.h
-SOURCES=matrix_help.cpp \
-		matrix_constructors.cpp \
-		matrix_methods.cpp \
-		matrix_operators.cpp
+SOURCES=matrix.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 LIB=matrix.a
 

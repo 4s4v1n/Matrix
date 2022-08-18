@@ -1,61 +1,70 @@
+/**
+ * @file   matrix.h
+ * @author Savin A. S. sav1nru<at>mail.ru
+ * @date   18/08/22
+ */
+
 #ifndef MATRIX_H
 #define MATRIX_H
 
 #include <cmath>
-#include <iostream>
+#include <utility>
+#include <stdexcept>
 
-#define STANDART_MATRIX_SIZE 3
+/**
+ * @class Matrix
+ * @brief Realization of matrix on cpp language
+ */
 
 class Matrix {
- private:
-  int rows, cols;
-  double** matrix;
 
- public:
-  // Конструкторы
+public:
   Matrix();
-  Matrix(int rows, int cols);
+  Matrix(const int rows, const int cols);
   Matrix(const Matrix& other);
   Matrix(Matrix&& other);
   ~Matrix();
+  auto operator=(const Matrix& other) -> Matrix&;
 
-  // Основные методы
-  bool eq_matrix(const Matrix& other);
-  void sum_matrix(const Matrix& other);
-  void sub_matrix(const Matrix& other);
-  void mul_number(const double num);
-  void mul_matrix(const Matrix& other);
-  Matrix transpose();
-  Matrix calc_complements();
-  double determinant();
-  Matrix inverse_matrix();
+public:
+  auto eq_matrix(const Matrix& other) const -> bool;
+  auto sum_matrix(const Matrix& other) -> void;
+  auto sub_matrix(const Matrix& other) -> void;
+  auto mul_number(const double num) -> void;
+  auto mul_matrix(const Matrix& other) -> void;
+  auto transpose() const -> Matrix;
+  auto calc_complements() const -> Matrix;
+  auto determinant() const  -> double;
+  auto inverse_matrix() const -> Matrix;
 
-  // Операторы
-  Matrix operator+(const Matrix& other);
-  Matrix operator-(const Matrix& other);
-  Matrix operator*(const Matrix& other);
-  Matrix operator*(const double num);
-  friend Matrix operator*(const double num, const Matrix&);
-  bool operator==(const Matrix& other);
-  void operator=(const Matrix& other);
-  void operator+=(const Matrix& other);
-  void operator-=(const Matrix& other);
-  void operator*=(const Matrix& other);
-  void operator*=(const double num);
-  double& operator()(const int i, const int j);
+public:
+  auto rows() const -> int;
+  auto cols() const -> int;
+  auto operator()(const int i, const int j) -> double&;
 
-  // accessor'ы и mutator'ы
-  int get_rows();
-  void set_rows(const int i);
-  int get_cols();
-  void set_cols(const int j);
-  double get_elem(const int i, const int j);
-  void set_elem(const double n, const int i, const int j);
-  double& get_adress(const int i, const int j);
+public:
+  friend auto operator+(const Matrix& lhs, const Matrix& rhs) -> Matrix;
+  friend auto operator-(const Matrix& lhs, const Matrix& rhs) -> Matrix;
+  friend auto operator*(const Matrix& lhs, const Matrix& rhs) -> Matrix;
+  friend auto operator*(const Matrix& lhs, const double rhs) -> Matrix;
+  friend auto operator*(const double lhs, const Matrix& rhs) -> Matrix;
+  friend auto operator==(const Matrix& lhs, const Matrix& rhs) -> bool;
+  friend auto operator+=(Matrix& lhs, const Matrix& rhs) -> void;
+  friend auto operator-=(Matrix& lhs, const Matrix& rhs) -> void;
+  friend auto operator*=(Matrix& lhs, const Matrix& rhs) -> void;
+  friend auto operator*=(Matrix& lhs, const double rhs) -> void;
 
-  // Вспомогательные функции
-  void print_matrix();
-  void new_matrix_wo_row_col(const Matrix& other, int r, int c);
+private:
+  void newMatrixWithoutRowAndCol(const Matrix& other, const int row, const int col);
+
+private:
+    static constexpr int standardSize = 3;
+
+private:
+    int      m_rows   {};
+    int      m_cols   {};
+    double** m_matrix {};
+
 };
 
-#endif  // MATRIX_OOP_H_
+#endif  // MATRIX_H
